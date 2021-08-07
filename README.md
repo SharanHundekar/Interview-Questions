@@ -288,4 +288,9 @@ https://github.com/sudheerj/javascript-interview-questions#what-are-pwas?
     ```
 78. How do you copy properties from one object to other : Object.assign(target, ...sources)
 79. Object.seal() : used to seal an object, by preventing new properties from being added to it and marking all existing properties as non-configurable. But values of present properties can still be changed. Object.isSealed() method is used to determine if an object is sealed or not.
-80. What are the differences between Obfuscation and Encryption
+80. What are the differences between Obfuscation and Encryption<br /><br /><br />
+
+
+<h2>Node.Js</h2>
+
+1. 
