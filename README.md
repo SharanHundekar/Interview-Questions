@@ -293,4 +293,64 @@ https://github.com/sudheerj/javascript-interview-questions#what-are-pwas?
 
 <h2>Node.Js</h2>
 
-1. 
+1. Definition
+    Node.js is an open-source server side runtime environment built on Chrome's V8 JavaScript engine. It provides an event driven, non-blocking (asynchronous) I/O and cross-platform runtime environment for building highly scalable server-side applications using JavaScript.
+    
+2. What are the data types in Node.js : String, Number, Boolean, null, RegExp, Buffer
+3. How to make an HTTP POST request using Node.js : using https module.
+4. What does the runtime environment mean in Node.js : is basically environement where our node js app runs. This can be used to describe both h/w n s/w details. Node v, RAM size,     CPU cores etc
+5. How node.js works
+    Clients Send request to Web Server.
+    Node JS Web Server internally maintains a Limited Thread pool to provide services to the Client Requests.
+    Node JS Web Server receives those requests and places them into a Queue. It is known as “Event Queue”.
+    Node JS Web Server internally has a Component, known as “Event Loop”. Why it got this name is that it uses indefinite loop to receive requests and process them.
+    Event Loop uses Single Thread only. It is main heart of Node JS Platform Processing Model.
+    Even Loop checks any Client Request is placed in Event Queue. If no, then wait for incoming requests for indefinitely.
+        If yes, then pick up one Client Request from Event Queue
+        Starts process that Client Request
+            If that Client Request Does Not requires any Blocking IO Operations, then process everything, prepare response and send it back to client.
+            If that Client Request requires some Blocking IO Operations like interacting with Database, File System, External Services then it will follow different approach
+                Checks Threads availability from Internal Thread Pool
+                Picks up one Thread and assign this Client Request to that thread.
+                That Thread is responsible for taking that request, process it, perform Blocking IO operations, prepare response and send it back to the Event Loop
+        Event Loop in turn, sends that Response to the respective Client.
+        
+6. What is an error-first callback : Any asynchronous method expects one of the arguments to be a callback, but the first argument is always an error object or null. When we go        for the asynchronous method, an exception thrown during function execution cannot be detected in a try/catch statement. The event happens after the JavaScript engine leaves        the try block.
+7. Callback hell : 
+    ```
+        getMyData(function(a) {
+        getEvenMore(a, function(b) {
+            getEvenemoreData(b, function(c){
+
+            })
+        })
+    })
+    ```
+8. Comparing Yarn vs npm
+    Yarn caches every package it downloads so it never needs to again.
+    Yarn uses checksums to verify the integrity of every installed package before its code is executed.
+    If you've installed a package before, you can install it again without any internet connection.
+    
+9. What is a stub : Stubs can be wrapped into existing functions. When we wrap a stub into the existing function the original function is not called. Stubs are functions or            programs that affect the behavior of compoents or modules. Stubs are dummy objects for testing. Stubs implement a pre-programmed response.
+10. What is a test pyramid : Essentially, the test pyramid describes that you should write unit tests, integration tests and end-to-end tests as well. You should have more             integration tests than end-to-end tests, and even more unit tests.
+11. How can you make sure your dependencies are safe : npm outdated, npm audit, npm audit fix
+12. What is REPL : Read, Eval, Print, Loop, its an computer environment
+13. Most Popoular npm modules : async, express, underscoure, http, nodemon, mongoose, sequalize, loadhash, socket.io, 
+14. What is EventEmitter in Node.js : 
+15. How many types of streams are present in node.js : readable, writable, duplex, transform
+16. Piping the Streams : Piping is a mechanism where we provide the output of one stream as the input to another stream
+17. Chaining the Streams : Chaining is a mechanism to connect the output of one stream to another stream and create a chain of multiple stream operations. It is normally used with       piping operations.
+18.  What is the use of DNS module in Node.js : DNS is a node module used to do name resolution facility which is provided by the operating system as well as used to do an actual      DNS lookup. No need for memorising IP addresses – DNS servers provide a nifty solution of converting domain or subdomain names to IP addresses. 
+19. What are the security mechanisms available in Node.js
+    Helmet helps to secure your Express applications by setting various HTTP headers, like:
+    a) X-Frame-Options to mitigates clickjacking attacks,
+    b) Strict-Transport-Security to keep your users on HTTPS,
+    c) X-XSS-Protection to prevent reflected XSS attacks,
+    d) X-DNS-Prefetch-Control to disable browsers DNS prefetching.
+
+20. How does Node.js support multi-processor platforms, and does it fully utilize all processor resources : using cluster modulw, The cluster module helps to spawn new processes       on the operating system. The main process listens on a port, accepts new connection and assigns it to a child process in a round robin fashion.
+21. What are globals in Node.js : 
+    Global : The Global keyword represents the global namespace object. It acts as a container for all other global objects.
+    Process : The process is a global object, an instance of EventEmitter, can be accessed from anywhere.It primarily gives back the information about the application or the               environment.
+    Buffer : The Buffer is a class in Node.js to handle binary data.
+22. What is chaining process in Node.js : It is an approach to connect the output of one stream to the input of another stream, thus creating a chain of multiple stream                    operations.    
