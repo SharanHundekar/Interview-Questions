@@ -24,7 +24,8 @@ https://github.com/sudheerj/javascript-interview-questions#what-are-pwas?
 7. Difference between == & ===
 8. Difference null & undefined
 9. Difference Function declaration & Function expression
-10. Closure<br />
+10. 
+<br />
   
     A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or     enclosing function’s variables. The closure has three scope chains<bt />
       1. Own scope where variables defined between its curly brackets
@@ -353,4 +354,30 @@ https://github.com/sudheerj/javascript-interview-questions#what-are-pwas?
     Global : The Global keyword represents the global namespace object. It acts as a container for all other global objects.
     Process : The process is a global object, an instance of EventEmitter, can be accessed from anywhere.It primarily gives back the information about the application or the               environment.
     Buffer : The Buffer is a class in Node.js to handle binary data.
-22. What is chaining process in Node.js : It is an approach to connect the output of one stream to the input of another stream, thus creating a chain of multiple stream                    operations.    
+22. What is chaining process in Node.js : It is an approach to connect the output of one stream to the input of another stream, thus creating a chain of multiple stream                    operations.
+23. Node.js security best practices
+    1. Validate user input to limit SQL injections and XSS attacks
+    2. Implement strong authentication and authorizations
+    3. Avoid errors that reveal too much
+    4. Run automatic vulnerability scanning : npm audit
+    5. Avoid data leaks : send only required data from backend to front end
+    6. Implement HTTP response headers : app.use(helmet()) - adds 11 different HTTP headers to secure node app.
+
+24. Performance Optimization tips for Node.js Applications
+    
+    **code wise**
+    1. Asynchronous Coding
+    2. Query Optimization
+    3. Caching
+    4. Run Parallel : acync.parallel[{},{},{}]
+    5. Avoid Memory Leaks
+    6. Eliminate unused components of .js libraries
+    7. Removing unused lines of codes
+    8. Avoiding global variables
+    9. Having a well-defined execution context
+
+    **resource wise / scale wise**
+    1. ELB
+    2. Spawing process to make utilize of complete cpu resources
+    3. Microservice
+      
