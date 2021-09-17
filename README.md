@@ -381,3 +381,34 @@ https://github.com/sudheerj/javascript-interview-questions#what-are-pwas?
     2. Spawing process to make utilize of complete cpu resources
     3. Microservice
       
+25. Difference between fork & spawn
+    fork() : 
+        This does not send data automatically, using parent global object we can send.
+        a new V8 instance is created.
+        It is used to separate computation-intensive tasks from the main event loop.
+    spawn() :
+        This starts sending data back to a parent process from the child process as soon as the child process starts executing.
+        no new V8 instance is created.
+        It is used when we want the child process to return a large amount of data back to the parent process
+        
+26. Difference between promise and Async await
+    promise : 
+        Promise has 3 states – resolved, rejected and pending.
+        Error handling is done using .then() and .catch() methods.
+        Promise chains can become difficult to understand sometimes.
+    Async await :
+        It does not have any states. It returns a promise either resolved or rejected.
+        Error handling is done using .try() and .catch() methods.
+        Using Async/Await makes it easier to read and understand the flow of the program as compared to promise chains.     
+        
+27. Differene b/w setImmediate & procee.nextTick()
+    Both setImmediate and process.nextTick appear to be doing the same thing; however, you may prefer one over the other depending on your callback’s urgency. It is interesting     to note that setImmediate adds callbacks to the event queue that are executed during the check phase, whereas process.nextTick executes callbacks immediately after the            current phase
+        
+28. what is serveless : Serverless computing is a method of providing backend services on an as-used basis
+29. HTTP Status codes :
+    200 - SUCCESS  
+    400 - BAD REQUEST - This can be due to validation errors or missing input data.
+    401 - FORBIDDEN - sent when the user does not have access (or is forbidden) to the resource.
+    404 - NOT FOUND - Resource method is not available.
+    500 - INTERNAL SERVER ERROR - server threw some exceptions while running the method.
+    502 - BAD GATEWAY - Server was not able to get the response from another upstream server    
