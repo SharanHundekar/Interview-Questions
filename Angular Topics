@@ -1,0 +1,17 @@
+1. Project structure
+2. Adding bootstrap styles to angular.json
+3. Components
+4. Data binding 
+  1. string interpolation
+  2. property bidning
+  3. Event binding
+  4. two-way binding
+5. App module and component declaration
+6. Directives : Strucutral directives - ngIf, ngFor
+7. Debugging in dev tools
+8. components communication
+  1. @Input
+  2. @output
+9. Local reference
+10. @viewchild
+11.
